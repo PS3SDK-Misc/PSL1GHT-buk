@@ -66,8 +66,6 @@ BUILDDIR		?=	$(CURDIR)/build
 	$(VERB) $(SFO) --title "$(TITLE)" --appid "$(APPID)" -f $(SFOXML) $(BUILDDIR)/pkg/PARAM.SFO
 	$(VERB) if [ -n "$(PKGFILES)" -a -d "$(PKGFILES)" ]; then cp -rf $(PKGFILES)/* $(BUILDDIR)/pkg/; fi
 	$(VERB) $(PKG) --contentid $(CONTENTID) $(BUILDDIR)/pkg/ $@ >> /dev/null
-	$(VERB) cp $@ $(basename $@).gnpdrm.pkg
-	$(VERB) $(PACKAGE_FINALIZE) $(basename $@).gnpdrm.pkg
 
 #---------------------------------------------------------------------------------
 %.vpo: %.vcg
